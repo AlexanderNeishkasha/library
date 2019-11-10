@@ -4,4 +4,14 @@ class Reader
   def initialize(name, email, city, street, house)
     @name, @email, @city, @street, @house = name, email, city, street, house
   end
+
+  def to_hash
+    {
+        name: @name,
+        email: @email,
+        city: @city,
+        street: @street,
+        house: @house
+    }
+  end
 end
