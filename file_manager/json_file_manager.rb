@@ -3,11 +3,10 @@ require 'json'
 
 class JsonFileManager < FileManager
   def read
-    content = File.readlines(@filename)
+    file = File.open(@filename)
+    content = file.read
     data = JSON.parse(content)
-    @library.authors = data[:authors]
-    @library.books = data[:books]
-    @library.readers = data[:readers]
+    @library.from_hash(data)
   rescue StandardError
     nil
   end

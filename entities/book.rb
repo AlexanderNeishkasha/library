@@ -11,4 +11,9 @@ class Book
         author: @author.to_hash
     }
   end
+
+  def self.create_from_hash(hash)
+    author = Author.create_from_hash(hash['author'])
+    self.new(hash['title'], author)
+  end
 end

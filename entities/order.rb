@@ -12,4 +12,11 @@ class Order
         date: @date
     }
   end
+
+  def self.create_from_hash(hash)
+    book = Book.create_from_hash(hash['book'])
+    reader = Reader.create_from_hash(hash['reader'])
+    date = Date.parse(hash['date'])
+    self.new(book, reader, date)
+  end
 end

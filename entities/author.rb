@@ -11,4 +11,8 @@ class Author
         biography: @biography
     }
   end
+
+  def self.create_from_hash(hash)
+    self.new(hash['name'], hash['biography'])
+  end
 end

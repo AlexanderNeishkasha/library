@@ -28,6 +28,13 @@ class Library
     }
   end
 
+  def from_hash(hash)
+    hash['authors'].each { |author_hash| add_author(Author.create_from_hash(author_hash)) }
+    hash['books'].each { |book_hash| add_book(Book.create_from_hash(book_hash)) }
+    hash['readers'].each { |reader_hash| add_reader(Reader.create_from_hash(reader_hash)) }
+    hash['orders'].each { |order_hash| add_order(Order.create_from_hash(order_hash)) }
+  end
+
   def add_author(author)
     @authors.push(author) if author.is_a? Author
   end

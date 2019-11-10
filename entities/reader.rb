@@ -14,4 +14,8 @@ class Reader
         house: @house
     }
   end
+
+  def self.create_from_hash(hash)
+    self.new(hash['name'], hash['email'], hash['city'], hash['street'], hash['house'])
+  end
 end
