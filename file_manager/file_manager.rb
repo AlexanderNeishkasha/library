@@ -1,17 +1,8 @@
+require_relative './json_file_manager'
+
 class FileManager
   def initialize(library, filename)
-    @library = library
-    @file = File.open(filename)
-  end
-
-  def self.get_instance(library, filename)
-    extension = filename.split('.').last
-    case extension
-    when 'json'
-      JsonFileManager.new library, filename
-    else
-      raise FileExtensionError "Extension '#{extension}' is not supported"
-    end
+    @library, @filename = library, filename
   end
 
   def read
