@@ -1,3 +1,3 @@
 source 'https://rubygems.org'
-gem 'rubocop', require: false
 gem 'fasterer'
+gem 'rubocop', require: false

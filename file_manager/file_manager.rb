@@ -2,7 +2,8 @@ require_relative './json_file_manager'
 
 class FileManager
   def initialize(library, filename)
-    @library, @filename = library, filename
+    @library = library
+    @filename = filename
   end
 
   def read
