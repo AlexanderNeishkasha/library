@@ -5,10 +5,10 @@ class FileEncoder
   end
 
   def read
-    raise NoMethodError 'Method is missing'
+    raise AbstractMethodError
   end
 
   def store
-    raise NoMethodError 'Method is missing'
+    raise AbstractMethodError
   end
 end
