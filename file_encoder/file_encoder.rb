@@ -1,6 +1,4 @@
-require_relative './json_file_manager'
-
-class FileManager
+class FileEncoder
   def initialize(library, filename)
     @library = library
     @filename = filename

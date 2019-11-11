@@ -1,4 +1,4 @@
-require './file_manager/file_manager_factory'
+require './file_encoder/file_encoder_factory'
 require './entities/author'
 require './entities/book'
 require './entities/reader'

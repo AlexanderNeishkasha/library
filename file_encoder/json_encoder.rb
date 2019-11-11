@@ -1,7 +1,7 @@
-require_relative './file_manager'
+require_relative './file_encoder'
 require 'json'
 
-class JsonFileManager < FileManager
+class JsonFileEncoder < FileEncoder
   def read
     file = File.open(@filename)
     content = file.read
