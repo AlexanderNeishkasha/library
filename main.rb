@@ -7,7 +7,13 @@ since 1970. He is founder of Uncle Bob Consulting, LLC, and cofounder with his s
 Martin has published dozens of articles in various trade journals and is a regular speaker at international conferences
 and trade shows')
 clean_code = Book.new('The clean code', uncle_bob)
-me = Reader.new('Alex', 'neishkasha.alexandr@gmail.com', 'Dnipro', 'Polya Avenue', '119')
+me = Reader.new(
+  name: 'Alex',
+  email: 'neishkasha.alexandr@gmail.com',
+  city: 'Dnipro',
+  street: 'Polya Avenue',
+  house: '119'
+)
 order = Order.new(clean_code, me)
 
 library.add_author(uncle_bob)
