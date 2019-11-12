@@ -5,7 +5,7 @@ library = file_encoder.read
 generator = Generator.new library
 
 rand(1..3).times do
-   generator.fake_order
+  generator.fake_order
 end
 
 statistics = Statistic.new library

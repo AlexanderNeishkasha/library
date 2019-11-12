@@ -1,4 +1,5 @@
 class Reader
+  include Validation
   attr_reader :name, :email, :city, :street, :house
 
   def initialize(name:, email:, city:, street:, house:)
@@ -10,13 +11,12 @@ class Reader
     @house = house
   end
 
-
   def validate(name:, email:, city:, street:, house:)
-    raise IncorrectAttributeType unless name.is_a? String
-    raise IncorrectAttributeType unless email.is_a? String
-    raise IncorrectAttributeType unless city.is_a? String
-    raise IncorrectAttributeType unless street.is_a? String
-    raise IncorrectAttributeType unless house.is_a? Integer
+    check_type name, String
+    check_type email, String
+    check_type city, String
+    check_type street, String
+    check_type house, Integer
     raise IncorrectAttributeValue if house <= 0
   end
 end

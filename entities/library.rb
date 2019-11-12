@@ -1,5 +1,3 @@
-
-
 class Library
   attr_reader :orders
 

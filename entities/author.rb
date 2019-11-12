@@ -1,4 +1,5 @@
 class Author
+  include Validation
   attr_reader :name, :biography
 
   def initialize(name, biography = '')
@@ -8,7 +9,7 @@ class Author
   end
 
   def validate(name, biography)
-    raise IncorrectAttributeType unless name.is_a? String
-    raise IncorrectAttributeType unless biography.is_a? String
+    check_type name, String
+    check_type biography, String
   end
 end

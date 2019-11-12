@@ -1,6 +1,7 @@
 require 'date'
 
 class Order
+  include Validation
   attr_reader :reader, :book, :date
 
   def initialize(book, reader, date = ::Date.today)
@@ -11,8 +12,8 @@ class Order
   end
 
   def validate(book, reader, date)
-    raise IncorrectAttributeType unless book.is_a? Book
-    raise IncorrectAttributeType unless reader.is_a? Reader
-    raise IncorrectAttributeType unless date.is_a? Date
+    check_type book, Book
+    check_type reader, Reader
+    check_type date, Date
   end
 end

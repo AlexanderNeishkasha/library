@@ -5,15 +5,15 @@ class Statistic
 
   def top_readers(count = 1)
     group_by_reader = @library.orders.group_by(&:reader)
-    sorted_by_count = group_by_reader.sort_by { |reader, orders| -orders.length }
+    sorted_by_count = group_by_reader.sort_by { |_reader, orders| -orders.length }
     readers = sorted_by_count.map(&:first)
     readers.take(count)
   end
 
   def most_populars_books(count = 1)
     group_by_book = @library.orders.group_by(&:book)
-    sorted_by_count = group_by_book.sort_by { |book, orders| -orders.length }
-    books = sorted_by_count.map { |book, orders| book }
+    sorted_by_count = group_by_book.sort_by { |_book, orders| -orders.length }
+    books = sorted_by_count.map { |book, _orders| book }
     books.take(count)
   end
 

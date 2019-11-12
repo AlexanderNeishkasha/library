@@ -5,6 +5,7 @@ require_relative './file_encoder/yaml_encoder'
 require_relative './statistic/statistic'
 require_relative './generator/generator'
 
+require_relative './validation/validation'
 require_relative './entities/author'
 require_relative './entities/book'
 require_relative './entities/reader'
