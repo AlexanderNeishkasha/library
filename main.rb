@@ -1,7 +1,6 @@
-require_relative './file_encoder/file_encoder_factory'
+require_relative './file_encoder/yaml_encoder'
 
-filename = 'library.yml'
-file_encoder = FileEncoderFactory.create filename
+file_encoder = YamlEncoder.create 'library.yml'
 library = file_encoder.read
 
 uncle_bob = Author.new('Robert Cecil Martin', 'Robert C. Martin (“Uncle Bob”) has been a programmer

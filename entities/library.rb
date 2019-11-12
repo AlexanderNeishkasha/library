@@ -11,22 +11,6 @@ class Library
     @orders = {}
   end
 
-  def to_hash
-    {
-      authors: @authors.map(&:to_hash),
-      books: @books.map(&:to_hash),
-      readers: @readers.map(&:to_hash),
-      orders: @orders.map(&:to_hash)
-    }
-  end
-
-  def from_hash(hash)
-    @authors = hash['authors'].map { |author_hash| Author.create_from_hash(author_hash) }
-    @books = hash['books'].map { |book_hash| Book.create_from_hash(book_hash) }
-    @readers = hash['readers'].map { |reader_hash| Reader.create_from_hash(reader_hash) }
-    @orders = hash['orders'].map { |order_hash| Order.create_from_hash(order_hash) }
-  end
-
   def add_author(author)
     id = 1
     id += @authors.keys.max || 0

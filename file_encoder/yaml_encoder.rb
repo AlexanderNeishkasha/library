@@ -1,8 +1,7 @@
-require_relative './file_encoder'
 require_relative '../entities/library'
 require 'yaml'
 
-class YamlEncoder < FileEncoder
+class YamlEncoder
   def read
     content = File.read(@filename)
     YAML.load content

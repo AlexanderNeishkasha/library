@@ -8,18 +8,4 @@ class Reader
     @street = street
     @house = house
   end
-
-  def to_hash
-    {
-      name: @name,
-      email: @email,
-      city: @city,
-      street: @street,
-      house: @house
-    }
-  end
-
-  def self.create_from_hash(hash)
-    new(hash)
-  end
 end
