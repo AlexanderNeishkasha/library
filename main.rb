@@ -1,6 +1,8 @@
-require './library'
+require_relative './file_encoder/file_encoder_factory'
 
-library = Library.new
+filename = 'library.yml'
+file_encoder = FileEncoderFactory.create filename
+library = file_encoder.read
 
 uncle_bob = Author.new('Robert Cecil Martin', 'Robert C. Martin (“Uncle Bob”) has been a programmer
 since 1970. He is founder of Uncle Bob Consulting, LLC, and cofounder with his son Micah Martin of The Clean Coders LLC.
@@ -21,4 +23,4 @@ library.add_book(clean_code)
 library.add_reader(me)
 library.add_order(order)
 
-library.store
+file_encoder.store library
