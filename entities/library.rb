@@ -1,21 +1,14 @@
-require './file_encoder/file_encoder_factory'
-require './entities/author'
-require './entities/book'
-require './entities/reader'
-require './entities/order'
+require_relative './author'
+require_relative './book'
+require_relative './reader'
+require_relative './order'
 
 class Library
-  def initialize(filename = 'library.json')
-    @authors = []
-    @books = []
-    @readers = []
-    @orders = []
-    @file_manager = FileManagerFactory.create(self, filename)
-    @file_manager.read
-  end
-
-  def store
-    @file_manager.store
+  def initialize
+    @authors = {}
+    @books = {}
+    @readers = {}
+    @orders = {}
   end
 
   def to_hash
@@ -35,18 +28,26 @@ class Library
   end
 
   def add_author(author)
-    @authors.push(author) if author.is_a? Author
+    id = 1
+    id += @authors.keys.max || 0
+    @authors[id] = author
   end
 
   def add_book(book)
-    @books.push(book) if book.is_a? Book
+    id = 1
+    id += @books.keys.max || 0
+    @books[id] = book
   end
 
   def add_reader(reader)
-    @readers.push(reader) if reader.is_a? Reader
+    id = 1
+    id += @readers.keys.max || 0
+    @readers[id] = reader
   end
 
   def add_order(order)
-    @orders.push(order) if order.is_a? Order
+    id = 1
+    id += @orders.keys.max || 0
+    @orders[id] = order
   end
 end
