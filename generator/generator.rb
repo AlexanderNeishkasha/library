@@ -11,7 +11,7 @@ class Generator
       email: FFaker::Internet.email,
       city: FFaker::Address.city,
       street: FFaker::Address.street_name,
-      house: FFaker::Address.building_number
+      house: rand(1..1000)
     )
     @library.add_reader(reader)
     reader
@@ -25,7 +25,7 @@ class Generator
 
   def fake_book
     author = fake_author
-    book = Book.new(FFaker::Lorem.words(rand(3..10)), author)
+    book = Book.new(FFaker::Lorem.sentence(rand(2..10)), author)
     @library.add_book(book)
     book
   end
