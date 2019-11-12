@@ -4,6 +4,8 @@ require_relative './reader'
 require_relative './order'
 
 class Library
+  attr_reader :orders
+
   def initialize
     @authors = []
     @books = []
