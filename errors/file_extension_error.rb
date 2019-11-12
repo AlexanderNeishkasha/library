@@ -1,2 +1,0 @@
-class FileExtensionError < StandardError
-end
