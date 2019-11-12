@@ -2,10 +2,14 @@ require_relative '../entities/library'
 require 'yaml'
 
 class YamlEncoder
+  def initialize(filename)
+    @filename = filename
+  end
+
   def read
     content = File.read(@filename)
-    YAML.load content
-  rescue StandardError
+    YAML.load(content) || Library.new
+  rescue Errno::ENOENT
     Library.new
   end
 

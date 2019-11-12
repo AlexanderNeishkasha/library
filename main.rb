@@ -1,6 +1,6 @@
 require_relative './file_encoder/yaml_encoder'
 
-file_encoder = YamlEncoder.create 'library.yml'
+file_encoder = YamlEncoder.new 'library.yml'
 library = file_encoder.read
 
 uncle_bob = Author.new('Robert Cecil Martin', 'Robert C. Martin (“Uncle Bob”) has been a programmer
