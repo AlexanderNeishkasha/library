@@ -25,6 +25,6 @@ class Generator
   end
 
   def fake_order
-    @library.add_order(Order.new(fake_reader, fake_book, FFaker::Time.date))
+    @library.add_order(Order.new(fake_book, fake_reader, FFaker::Time.date))
   end
 end
