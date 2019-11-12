@@ -1,6 +1,4 @@
-require_relative './file_encoder/yaml_encoder'
-require_relative './statistic/statistic'
-require_relative './generator/generator'
+require_relative './load'
 
 file_encoder = YamlEncoder.new('library.yml')
 library = file_encoder.read

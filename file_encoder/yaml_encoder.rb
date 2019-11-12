@@ -1,4 +1,3 @@
-require_relative '../entities/library'
 require 'yaml'
 
 class YamlEncoder
