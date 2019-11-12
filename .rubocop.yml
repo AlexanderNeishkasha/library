@@ -4,3 +4,5 @@ Style/FrozenStringLiteralComment:
   Enabled: false
 Style/Documentation:
   Enabled: false
+Security/YAMLLoad:
+  Enabled: false
