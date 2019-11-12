@@ -5,33 +5,25 @@ require_relative './order'
 
 class Library
   def initialize
-    @authors = {}
-    @books = {}
-    @readers = {}
-    @orders = {}
+    @authors = []
+    @books = []
+    @readers = []
+    @orders = []
   end
 
   def add_author(author)
-    id = 1
-    id += @authors.keys.max || 0
-    @authors[id] = author
+    @authors.push author if author.is_a? Author
   end
 
   def add_book(book)
-    id = 1
-    id += @books.keys.max || 0
-    @books[id] = book
+    @books.push book if book.is_a? Book
   end
 
   def add_reader(reader)
-    id = 1
-    id += @readers.keys.max || 0
-    @readers[id] = reader
+    @readers.push reader if reader.is_a? Reader
   end
 
   def add_order(order)
-    id = 1
-    id += @orders.keys.max || 0
-    @orders[id] = order
+    @orders.push order if order.is_a? Order
   end
 end
