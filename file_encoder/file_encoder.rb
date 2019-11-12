@@ -1,6 +1,5 @@
 class FileEncoder
-  def initialize(library, filename)
-    @library = library
+  def initialize(filename)
     @filename = filename
   end
 

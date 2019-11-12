@@ -1,11 +1,14 @@
 require_relative './json_encoder'
+require_relative './yaml_encoder'
 
-class FileManagerFactory
-  def self.create(library, filename)
+class FileEncoderFactory
+  def self.create(filename)
     extension = filename.split('.').last
     case extension
     when 'json'
-      JsonFileEncoder.new library, filename
+      JsonFileEncoder.new filename
+    when 'yml'
+      YamlEncoder.new filename
     else
       raise FileExtensionError "Extension '#{extension}' is not supported"
     end
