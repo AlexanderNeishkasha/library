@@ -1,7 +1,4 @@
-require_relative './author'
-require_relative './book'
-require_relative './reader'
-require_relative './order'
+
 
 class Library
   attr_reader :orders
