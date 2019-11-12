@@ -1,0 +1,2 @@
+class IncorrectAttributeValue < StandardError
+end
