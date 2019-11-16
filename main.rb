@@ -4,7 +4,7 @@ file_encoder = YamlEncoder.new('library.yml')
 library = file_encoder.read
 generator = Generator.new library
 
-generator.generate_fake_entities(3, 1).each { |entity| library.add_entity entity }
+generator.cross_readers_and_books(1, 1).each { |entity| library.add_entity entity }
 
 statistics = Statistic.new library
 puts 'Top readers:'

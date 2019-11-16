@@ -27,7 +27,7 @@ class Generator
     Order.new(book, reader, FFaker::Time.date)
   end
 
-  def generate_fake_entities(count_readers, count_books)
+  def cross_readers_and_books(count_readers, count_books)
     authors = generate_fake_authors(count_books)
     readers = generate_fake_readers(count_readers)
     books = generate_fake_books(authors)
