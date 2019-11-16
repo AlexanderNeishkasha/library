@@ -13,26 +13,26 @@ class Generator
       street: FFaker::Address.street_name,
       house: rand(1..1000)
     )
-    @library.add_reader(reader)
+    @library.add_entity(reader)
     reader
   end
 
   def fake_author
     author = Author.new(FFaker::Name.name, FFaker::Lorem.paragraph)
-    @library.add_author(author)
+    @library.add_entity(author)
     author
   end
 
   def fake_book
     author = fake_author
     book = Book.new(FFaker::Lorem.sentence(rand(2..10)), author)
-    @library.add_book(book)
+    @library.add_entity(book)
     book
   end
 
   def fake_order
     order = Order.new(fake_book, fake_reader, FFaker::Time.date)
-    @library.add_order(order)
+    @library.add_entity(order)
     order
   end
 end

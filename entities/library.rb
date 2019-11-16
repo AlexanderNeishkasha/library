@@ -8,19 +8,14 @@ class Library
     @orders = []
   end
 
-  def add_author(author)
-    @authors.push author if author.is_a? Author
-  end
-
-  def add_book(book)
-    @books.push book if book.is_a? Book
-  end
-
-  def add_reader(reader)
-    @readers.push reader if reader.is_a? Reader
-  end
-
-  def add_order(order)
-    @orders.push order if order.is_a? Order
+  def add_entity(entity)
+    storage = case entity
+              when Book then @books
+              when Author then @authors
+              when Reader then @readers
+              when Order then @orders
+              else raise UnknownEntityClassError
+              end
+    storage.push(entity)
   end
 end
