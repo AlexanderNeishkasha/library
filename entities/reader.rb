@@ -19,4 +19,8 @@ class Reader
     check_type house, Integer
     check_positive_value house
   end
+
+  def to_s
+    "Name: '#{name}' Email: '#{email}'"
+  end
 end

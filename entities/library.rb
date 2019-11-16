@@ -14,7 +14,7 @@ class Library
               when Author then @authors
               when Reader then @readers
               when Order then @orders
-              else raise UnknownEntityClassError
+              else raise UnknownEntityClassError "Unknown entity class '#{entity.class}'"
               end
     storage.push(entity)
   end

@@ -8,7 +8,7 @@ class YamlEncoder
   def read
     content = File.read(@filename)
     library = YAML.load(content)
-    library.is_a? Library ? library : Library.new
+    library.is_a?(Library) ? library : Library.new
   rescue Errno::ENOENT
     Library.new
   end

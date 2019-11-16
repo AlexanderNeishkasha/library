@@ -12,4 +12,8 @@ class Book
     check_type title, String
     check_type author, Author
   end
+
+  def to_s
+    "Title: '#{title}' Author: '#{author}'"
+  end
 end

@@ -12,4 +12,8 @@ class Author
     check_type name, String
     check_type biography, String
   end
+
+  def to_s
+    name
+  end
 end
