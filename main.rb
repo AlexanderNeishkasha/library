@@ -4,8 +4,6 @@ file_encoder = YamlEncoder.new('library.yml')
 library = file_encoder.read
 generator = Generator.new library
 
-generator.generate_fake_entities(2, 2).each { |entity| library.add_entity entity }
-generator.generate_fake_entities(1, 3).each { |entity| library.add_entity entity }
 generator.generate_fake_entities(3, 1).each { |entity| library.add_entity entity }
 
 statistics = Statistic.new library
