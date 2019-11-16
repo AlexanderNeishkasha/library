@@ -1,4 +1,4 @@
-require_relative './load'
+require_relative './autoload'
 
 file_encoder = YamlEncoder.new('library.yml')
 library = file_encoder.read

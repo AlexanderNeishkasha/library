@@ -1,5 +1,6 @@
 require_relative './errors/incorrect_attribute_type_error'
 require_relative './errors/incorrect_attribute_value_error'
+require_relative './errors/unknown_entity_class_error'
 
 require_relative './file_encoder/yaml_encoder'
 require_relative './statistic/statistic'
