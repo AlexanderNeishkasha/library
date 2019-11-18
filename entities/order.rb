@@ -4,12 +4,14 @@ class Order
   include Validation
   attr_reader :reader, :book, :date
 
-  def initialize(book, reader, date = ::Date.today)
+  def initialize(book:, reader:, date:  ::Date.today)
     @book = book
     @reader = reader
     @date = date
     validate
   end
+
+  private
 
   def validate
     check_type book, Book

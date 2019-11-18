@@ -24,7 +24,7 @@ class Generator
   end
 
   def fake_order(book, reader)
-    Order.new(book, reader, FFaker::Time.date)
+    Order.new(book: book, reader: reader, date: FFaker::Time.date)
   end
 
   def cross_readers_and_books(count_readers, count_books)
