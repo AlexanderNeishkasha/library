@@ -16,7 +16,7 @@ class Generator
   end
 
   def fake_author
-    Author.new(FFaker::Name.name, FFaker::Lorem.paragraph)
+    Author.new(name: FFaker::Name.name, biography: FFaker::Lorem.paragraph)
   end
 
   def fake_book(author)
