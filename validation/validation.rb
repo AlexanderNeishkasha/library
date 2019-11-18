@@ -6,4 +6,8 @@ module Validation
   def check_positive_value(value)
     raise IncorrectAttributeValue if value <= 0
   end
+
+  def check_not_empty(value)
+    raise EmptyValueError if value.empty?
+  end
 end
