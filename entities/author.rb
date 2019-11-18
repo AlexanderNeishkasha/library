@@ -9,13 +9,16 @@ class Author
     validate
   end
 
+  def to_s
+    name
+  end
+
+  private
+
   def validate
     check_type name, String
     check_type biography, String
     check_not_empty name
   end
 
-  def to_s
-    name
-  end
 end
