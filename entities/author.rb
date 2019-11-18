@@ -16,8 +16,8 @@ class Author
   private
 
   def validate
-    check_type name, String
-    check_type biography, String
-    check_not_empty name
+    check_type(name, String)
+    check_type(biography, String)
+    check_not_empty(name)
   end
 end

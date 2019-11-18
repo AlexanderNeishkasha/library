@@ -18,9 +18,9 @@ class Reader
 
   def validate
     check_type(name, String)
-    check_not_empty(email)
     check_type(email, String)
-    check_not_empty(name)
     check_type(address, Address)
+    check_not_empty(name)
+    check_not_empty(email)
   end
 end

@@ -16,8 +16,8 @@ class Book
   private
 
   def validate
-    check_type title, String
-    check_type author, Author
-    check_not_empty title
+    check_type(title, String)
+    check_type(author, Author)
+    check_not_empty(title)
   end
 end

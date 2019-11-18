@@ -14,10 +14,10 @@ class Address
 
   def validate
     check_type(city, String)
-    check_not_empty(city)
     check_type(street, String)
-    check_not_empty(street)
     check_type(house, Integer)
+    check_not_empty(city)
+    check_not_empty(street)
     check_positive_value(house)
   end
 end
