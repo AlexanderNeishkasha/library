@@ -20,7 +20,7 @@ class Generator
   end
 
   def fake_book(author)
-    Book.new(FFaker::Lorem.sentence(rand(2..10)), author)
+    Book.new(title: FFaker::Lorem.sentence(rand(2..10)), author: author)
   end
 
   def fake_order(book, reader)
