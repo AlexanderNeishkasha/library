@@ -2,6 +2,7 @@ require 'date'
 
 class Order
   include Validation
+
   attr_reader :reader, :book, :date
 
   def initialize(book:, reader:, date: ::Date.today)
