@@ -20,5 +20,4 @@ class Author
     check_type biography, String
     check_not_empty name
   end
-
 end

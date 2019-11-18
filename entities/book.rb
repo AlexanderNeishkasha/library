@@ -19,5 +19,4 @@ class Book
     check_type author, Author
     check_not_empty title
   end
-
 end
