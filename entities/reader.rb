@@ -1,26 +1,25 @@
 class Reader
   include Validation
-  attr_reader :name, :email, :city, :street, :house
+  attr_reader :name, :email, :address
 
-  def initialize(name:, email:, city:, street:, house:)
+  def initialize(name:, email:, address:)
     @name = name
     @email = email
-    @city = city
-    @street = street
-    @house = house
+    @address = address
     validate
-  end
-
-  def validate
-    check_type name, String
-    check_type email, String
-    check_type city, String
-    check_type street, String
-    check_type house, Integer
-    check_positive_value house
   end
 
   def to_s
     "Name: '#{name}' Email: '#{email}'"
+  end
+
+  private
+
+  def validate
+    check_type(name, String)
+    check_not_empty(email)
+    check_type(email, String)
+    check_not_empty(name)
+    check_type(address, Address)
   end
 end

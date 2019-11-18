@@ -5,10 +5,16 @@ class Generator
     @library = library
   end
 
-  def fake_reader
+  def fake_reader(address)
     Reader.new(
       name: FFaker::Name.name,
       email: FFaker::Internet.email,
+      address: address
+    )
+  end
+
+  def fake_address
+    Address.new(
       city: FFaker::Address.city,
       street: FFaker::Address.street_name,
       house: rand(1..1000)
@@ -43,7 +49,7 @@ class Generator
 
   def generate_fake_readers(count)
     readers = []
-    count.times { readers.push(fake_reader) }
+    count.times { readers.push(fake_reader(fake_address)) }
     readers
   end
 
