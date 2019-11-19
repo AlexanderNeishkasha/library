@@ -1,0 +1,2 @@
+class UnknownEntityClassError < StandardError
+end
